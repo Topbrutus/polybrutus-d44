@@ -1,0 +1,27 @@
+name: Verify Polybrutus D44 exact certificate and frozen D43 source
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+jobs:
+  exact-d44:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned exact arithmetic
+        run: python -m pip install sympy==1.14.0
+      - name: Verify full 1176-pair exact Euclidean metric and ideal graph
+        run: python src/verify_d44.py
+      - name: Verify independently reconstructed Fraction-based exact labels
+        run: python tests/independent_d44.py
+      - name: Assert deterministic certificate byte equality
+        run: git diff --exit-code -- results/certificate_d44.json
+      - name: Authenticate full immutable D43 scientific source and parent certificate
+        run: |
+          python -c "from pathlib import Path;from zipfile import ZipFile;import hashlib;p=Path('prior/d43/frozen_scientific_tag_v0.1.0.zip');c=Path('prior/d43/results/certificate_d43.json').read_bytes();assert hashlib.sha256(p.read_bytes()).hexdigest()=='a009bf83bbca8f3b343c29afb470f647a8dd8fdbde176051c8f3d1ad34b512e1';assert hashlib.sha256(c).hexdigest()=='339134e166ccf3322d9aff9244f9bd488de71013a3c27992297ae155d046c550';z=ZipFile(p);assert len(z.namelist())==28 and z.testzip() is None and z.read('results/certificate_d43.json')==c"
