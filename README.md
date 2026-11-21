@@ -25,6 +25,15 @@ Both programs output the same deterministic SHA-256 for `results/certificate_d44
 
 **Immutable complete scientific lineage:** The exact frozen D43 scientific tag including *all* ancestors is in `prior/d43/frozen_scientific_tag_v0.1.0.zip` (SHA-256 `a009bf83bbca8f3b343c29afb470f647a8dd8fdbde176051c8f3d1ad34b512e1`, 28 entries, CRC PASS). Original certificate `results/certificate_d43.json` is extracted byte-identically to `prior/d43/results/certificate_d43.json`; both programs check the ZIP, certificate, hashes and CRC. Compressed ancestral source avoids Windows MAX_PATH issues while preserving all original bytes, without Git submodules or nested repositories.
 
+## Official DOI and verified public release
+
+- **Official DOI:** [10.5281/zenodo.24415463](https://doi.org/10.5281/zenodo.24415463).
+- **Public Zenodo record:** https://zenodo.org/records/24415463, all 3 public files checked for exact sizes and MD5 against the original bytes.
+- **Frozen science tag:** [v0.1.0](https://github.com/Topbrutus/polybrutus-d44/tree/v0.1.0), source commit `d5831cffec4330b6593c2242051d6e920c757080`.
+- **Tag CI:** [GitHub Actions 44888404176](https://github.com/Topbrutus/polybrutus-d44/actions/runs/44888404176), success.
+- **Durable Memoria checkpoint:** https://github.com/Topbrutus/topbrutus_one/blob/main/memoria/checkpoints/POLYBRUTUS_D44_PUBLICATION_2026-11-21.md .
+- **Publications registry:** https://github.com/Topbrutus/topbrutus_one/blob/main/memoria/projects/POLYBRUTUS_X72_PUBLICATIONS_INDEX.md .
+
 ## Sources and limitations
 
 - [Exact specification](SPECIFICATION_D44.md); [constructive proof and falsification controls](PREUVE_D44.md); [provenance and scientific boundaries](PROVENANCE.md); [parent source archive](prior/d43/ARCHIVE_PROVENANCE.md).

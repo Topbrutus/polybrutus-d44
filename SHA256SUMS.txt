@@ -1,0 +1,5 @@
+# SHA-256 checksums of the three official public files, Zenodo record 24415463
+# Source ZIP is a frozen scientific Git tag archive; PDF and certificate are inside it
+e74794dbfa9c6eb4bb3307dc95d57462dc4176516260c7855f1eb31acde231ec  POLYBRUTUS_D44_SOURCE_v0.1.0_GITHUB_TAG.zip
+ab13c8c34b1602b2257a0e2c7a54f65660980d0109ab7485ee6baff5075bdf04  publication/POLYBRUTUS_44D_NOTE.pdf
+8c833b8907689ccc4e5519bd6d3c57eadba14876336dcc8d0fe63b672555b9e9  results/certificate_d44.json

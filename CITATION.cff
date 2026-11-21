@@ -10,3 +10,5 @@ date-released: 2026-11-21
 license: MIT
 repository-code: https://github.com/Topbrutus/polybrutus-d44
 abstract: "Exact 49-point Euclidean labelled squared-distance metric conserving all 1128 parent pairs with independently checked abstract graph modes."
+doi: 10.5281/zenodo.24415463
+url: https://doi.org/10.5281/zenodo.24415463
